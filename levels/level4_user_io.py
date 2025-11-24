@@ -45,7 +45,14 @@ def parse_choice(input_str: str, max_choice: int) -> Optional[int]:
     #       return None
     
     # ⬇️ REPLACE THE NEXT LINE WITH YOUR CODE ⬇️
-    return None
+    try:
+        number = int(input_str)
+        if 1 <= number <= max_choice:
+            return number
+        else:
+            return None
+    except ValueError:
+        return None
     # ⬇️ WRITE YOUR CODE ABOVE THIS LINE ⬇️
 
 
@@ -68,7 +75,10 @@ def parse_float(input_str: str) -> Optional[float]:
     #       return None
     
     # ⬇️ REPLACE THE NEXT LINE WITH YOUR CODE ⬇️
-    return None
+    try:
+        return float(input_str)
+    except ValueError:
+        return None
     # ⬇️ WRITE YOUR CODE ABOVE THIS LINE ⬇️
 
 
@@ -96,8 +106,15 @@ def get_pressure_with_default(input_str: str) -> Optional[float]:
     #       else:
     #           return None
     
-    # ⬇️ REPLACE THE NEXT LINE WITH YOUR CODE ⬇️
-    return None
+    # ⬇️ REPLACE THE NEXT LINE WITH YOUR CODE 
+    if input_str.strip() == "":
+        return 1.0
+    else:
+        number = parse_float(input_str)
+        if number is not None and number > 0:
+            return number
+        else:
+            return None
     # ⬇️ WRITE YOUR CODE ABOVE THIS LINE ⬇️
 
 

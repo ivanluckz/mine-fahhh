@@ -46,10 +46,12 @@ def decide_state(temperature: float, freezing_point: float, actual_boiling_point
     
     result_state = None
     # ⬇️ WRITE YOUR if/elif/else LOGIC BELOW THIS LINE ⬇️
-    
-    
+    if temperature <= freezing_point:
+        result_state = "SOLID"
+    elif temperature >= actual_boiling_point:
+        result_state = "GAS"
+    else:
+        result_state = "LIQUID"
     # ⬇️ WRITE YOUR CODE ABOVE THIS LINE ⬇️
 
     return result_state
-
-
